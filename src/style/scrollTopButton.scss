@@ -1,0 +1,11 @@
+@import "./varible.scss";
+
+.scroll-btn {
+    opacity: 0.5;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    &:hover {
+        opacity: 1;
+    }
+}

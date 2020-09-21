@@ -1,0 +1,80 @@
+$background: #eee;
+$head-nav-bgc: #001f3f;
+$head-nav-c: #bfc7cf;
+$highlight-bgc: #fd7d14;
+$highlight-c: #1f2d3d;
+
+@mixin rotate($deg) {
+  -webkit-transform: rotate($deg);
+  -moz-transform: rotate($deg);
+  -o-transform: rotate($deg);
+  -ms-transform: rotate($deg);
+  transform: rotate($deg);
+}
+
+@mixin ease-in-out($s) {
+  -webkit-transition: $s ease-in-out;
+  -moz-transition: $s ease-in-out;
+  -o-transition: $s ease-in-out;
+  -ms-transition: $s ease-in-out;
+  transition: $s ease-in-out;
+}
+
+@mixin animateOpacity {
+  @-webkit-keyframes op {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @-moz-keyframes op {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @-o-keyframes op {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @-ms-keyframes op {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes op {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+@include animateOpacity();
+
+@mixin easeOpacity($s) {
+  -webkit-animation: op ease $s;
+  -moz-animation: op ease $s;
+  -o-animation: op ease $s;
+  -ms-animation: op ease $s;
+  animation: op ease $s;
+}
+
+@mixin forwardOpacity($s1, $s2) {
+  -webkit-animation: op $s1 $s2 forwards;
+  -moz-animation: op $s1 $s2 forwards;
+  -o-animation: op $s1 $s2 forwards;
+  animation: op $s1 $s2 forwards;
+}

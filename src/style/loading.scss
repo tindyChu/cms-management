@@ -1,0 +1,21 @@
+@import "bootstrap/scss/bootstrap.scss";
+@import "./varible.scss";
+
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 3px solid $highlight-bgc;
+    border-color: $highlight-bgc transparent $highlight-bgc transparent;
+    animation: lds-dual-ring 1s linear infinite;
+}
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

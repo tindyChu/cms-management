@@ -1,0 +1,19 @@
+@import "./varible.scss";
+@import "./mask.scss";
+
+[class*="sidebar-dark-"] .nav-flat .nav-item .nav-treeview > .nav-item > .nav-link,
+[class*="sidebar-dark-"] .nav-flat .nav-item .nav-treeview > .nav-item > .nav-link.active {
+    border-color: rgba(253, 126, 20, 0.9) !important;
+}
+
+.right-mask {
+    @extend .mask;
+    display: none;
+    z-index: 1037;
+}
+
+@media (max-width: 992px) {
+    .right-mask {
+        display: block;
+    }
+}

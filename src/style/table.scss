@@ -1,0 +1,29 @@
+@import "bootstrap/scss/bootstrap.scss";
+
+.table-container {
+    overflow-x: auto;
+    @extend .text-nowrap;
+    table {
+        font-size: 15px;
+        thead {
+            background-color: #eef;
+        }
+        tbody {
+            tr:nth-of-type(even) {
+                background-color: #fff;
+            }
+            tr:nth-of-type(odd) {
+                background-color: #eee;
+            }
+        }
+        tbody td .sort {
+            width: 3.2rem;
+        }
+    }
+}
+
+.btn-group {
+    .btn {
+        border-radius: 0.25rem !important;
+    }
+}

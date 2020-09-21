@@ -1,0 +1,114 @@
+@import "bootstrap/scss/bootstrap.scss";
+@import "./varible.scss";
+
+form {
+  .back {
+    margin-bottom: 1.2rem;
+    float: right;
+  }
+  .submit {
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    float: right;
+  }
+  .form-group {
+    margin-top: 1rem;
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 500px;
+    border: 1px solid $head-nav-bgc;
+    &.preview {
+      max-height: 200px;
+      filter: brightness(80%);
+      opacity: 0.7;
+    }
+  }
+
+  .file-label {
+    @extend .btn;
+    background-color: $head-nav-bgc;
+    color: $head-nav-c;
+    margin-bottom: 0px;
+    &:hover {
+      background-color: $highlight-bgc;
+      color: $highlight-c;
+    }
+    &.disabled {
+      background-color: #888;
+      color: #000;
+    }
+  }
+
+  .file-input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+}
+
+.login-form {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+  .title {
+    @extend h3;
+    @extend .text-center;
+    margin-bottom: 2.2rem;
+  }
+  label {
+    @extend .sr-only;
+  }
+  input {
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .submit {
+    @extend .btn-lg;
+    @extend .btn-block;
+    margin-top: 2.2rem;
+  }
+}
+
+.form-file {
+  .btn-group {
+    .btn {
+      border-radius: 0.25rem !important;
+    }
+  }
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  /* Hide original inputs */
+  visibility: hidden;
+  position: absolute;
+}
+input[type="radio"] + label:before,
+input[type="checkbox"] + label:before {
+  height: 12px;
+  width: 12px;
+  margin-right: 2px;
+  content: " ";
+  display: inline-block;
+  vertical-align: baseline;
+  border: 1px solid $highlight-c;
+}
+input[type="radio"].checked + label:before,
+input[type="checkbox"].checked + label:before {
+  background: $highlight-bgc;
+}
+
+/* CUSTOM RADIO AND CHECKBOX STYLES */
+input[type="radio"] + label:before {
+  border-radius: 50%;
+}
+input[type="checkbox"] + label:before {
+  border-radius: 2px;
+}

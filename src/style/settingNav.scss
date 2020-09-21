@@ -1,0 +1,49 @@
+@import "./varible.scss";
+
+$hover-c: #d8d9da;
+$menu-open-c: #e9eaeb;
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: $hover-c !important;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+    color: $highlight-c !important;
+    background-color: $highlight-bgc !important;
+}
+
+.dropdown-menu {
+    cursor: pointer;
+}
+.right {
+    float: right;
+}
+// .has-tree {
+//     i:last-of-type {
+//         transition: -webkit-transform ease-in-out 0.3s;
+//         transition: transform ease-in-out 0.3s;
+//         transition: transform ease-in-out 0.3s, -webkit-transform ease-in-out 0.3s;
+//         -webkit-transform: rotate(0deg);
+//         transform: rotate(0deg);
+//     }
+// }
+.has-tree.menu-open {
+    background-color: $menu-open-c !important;
+    i:last-of-type {
+        @include rotate(-90deg);
+        @include ease-in-out(0.3s);
+    }
+}
+
+.has-tree + ul {
+    padding-left: 0rem !important;
+    list-style: none !important;
+    > li {
+        padding: 0.2rem;
+    }
+    > li:hover {
+        background-color: $hover-c !important;
+    }
+}
