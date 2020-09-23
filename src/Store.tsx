@@ -15,36 +15,8 @@ const initialState: IState = {
 
 function reducer(state: IState, action: IAction): IState {
   const type = action.type;
-  const normalTypes: Array<string> = [
-    "siteInfo",
-    "nav",
-    "languageArr",
-    "mgtRoleArr",
-    "dialog",
-    "tmpDialog",
-    "initialled",
-    "settingNav",
-    "leftNav",
-    "loginForm",
-    "homeBannerTable",
-    "homeBannerTableSearch",
-    "homeBannerForm",
-    "itemTable",
-    "itemTableSearch",
-    "itemForm",
-    "itemFileForm",
-    "adminTable",
-    "adminTableSearch",
-    "adminForm",
-    "siteInfoTable",
-    "siteInfoForm",
-    "scrollTopButton",
-  ];
 
-  if (normalTypes.indexOf(type) !== -1) {
-    console.log("store", type);
-    return { ...state, [type]: action.payload };
-  } else if (type === "dialogLogin") {
+  if (type === "dialogLogin") {
     return { ...state, dialog: { show: true, type: "loginForm" } };
   } else if (type === "dialogMask") {
     return { ...state, dialog: { show: true, type: "mask" } };
@@ -61,7 +33,8 @@ function reducer(state: IState, action: IAction): IState {
     }
     return { ...state };
   } else {
-    throw new Error(`Action Type no match (${type})`);
+    console.log("store", type);
+    return { ...state, [type]: action.payload };
   }
 }
 

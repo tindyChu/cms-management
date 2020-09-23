@@ -10,7 +10,6 @@ import FieldInput from "./field/Input";
 import FieldRadio from "./field/Radio";
 import validation from "../../utils/validation";
 import t from "../../utils/translation";
-
 import { isDuplicatedArr, getLangUrl, getPayload } from "../../utils/common";
 import http from "../../utils/http";
 import useResp from "../../hooks/useResp";

@@ -1,7 +1,12 @@
 import React from "react";
 
 import { Store } from "../../../Store";
-import { ISearchForm, TObject, TDispatchForm } from "../../../interfaces";
+import {
+  ISearchForm,
+  TObject,
+  TDispatchForm,
+  FDispatchTableSearchForm,
+} from "../../../interfaces";
 import t from "../../../utils/translation";
 import FieldInput from "../field/Input";
 import FieldSelect from "../field/Select";
@@ -14,7 +19,7 @@ export default function Search({
 }: ISearchForm): JSX.Element {
   const { state, dispatch } = React.useContext(Store);
 
-  const searchType = (dispatchTypeP + "Search") as TDispatchForm;
+  const searchType = FDispatchTableSearchForm(dispatchTypeP);
   let searchS = state[searchType] || {};
   searchS.data = searchS.data || {};
 

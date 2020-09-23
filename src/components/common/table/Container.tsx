@@ -5,9 +5,11 @@ import queryString from "query-string";
 import { Store } from "../../../Store";
 import {
   TObject,
+  ITable,
   ITableSearch,
   TOption,
   TDispatchType,
+  FDispatchTableSearchForm,
 } from "../../../interfaces";
 import validation from "../../../utils/validation";
 import { getLangUrl, isInt } from "../../../utils/common";
@@ -30,11 +32,12 @@ export default function Container({
   uniqueKey: uniqueKeyP,
   canUpload: canUploadP,
   setExtraState: setExtraStateP,
-}: any): JSX.Element {
+}: ITable): JSX.Element {
   const { state, dispatch } = React.useContext(Store);
   const { languageArr: languageArrS } = state;
   const tableS = state[dispatchTypeP] || {};
-  const searchS = state[dispatchTypeP + "Search"] || {};
+  const searchType = FDispatchTableSearchForm(dispatchTypeP);
+  const searchS = state[searchType] || {};
   const langUrl = getLangUrl();
   const history = useHistory();
 
@@ -67,7 +70,7 @@ export default function Container({
   const updateSearch = () => {
     if (searchesP) {
       dispatch({
-        type: (dispatchTypeP + "Search") as TDispatchType,
+        type: searchType,
         payload: searchS,
       });
     }

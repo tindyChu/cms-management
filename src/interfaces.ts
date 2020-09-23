@@ -24,6 +24,11 @@ export type TDispatchTable =
   | "itemTable"
   | "adminTable"
   | "siteInfoTable";
+export type TDispatchTableSearchForm =
+  | "homeBannerTableSearch"
+  | "itemTableSearch"
+  | "adminTableSearch"
+  | "siteInfoTableSearch";
 export type TDispatchForm =
   | "loginForm"
   | "homeBannerForm"
@@ -31,7 +36,17 @@ export type TDispatchForm =
   | "itemFileForm"
   | "adminForm"
   | "siteInfoForm";
-export type TDispatchType = TDispatchCommon | TDispatchTable | TDispatchForm;
+export type TDispatchType =
+  | TDispatchCommon
+  | TDispatchTable
+  | TDispatchTableSearchForm
+  | TDispatchForm;
+
+export const FDispatchTableSearchForm = (
+  dispatchType: TDispatchTable
+): TDispatchTableSearchForm => {
+  return `${dispatchType}Search` as TDispatchTableSearchForm;
+};
 
 export type TNav = {
   title: string;
@@ -122,7 +137,7 @@ export interface ISearchForm {
 }
 
 export interface IInputField {
-  dispatchType: TDispatchForm;
+  dispatchType: TDispatchForm | TDispatchTableSearchForm;
   fields: Array<IFormField>;
   name: string;
   deepPath: string;
@@ -133,7 +148,7 @@ export interface IInputField {
   [key: string]: any;
 }
 export interface ISelectField {
-  dispatchType: TDispatchForm;
+  dispatchType: TDispatchForm | TDispatchTableSearchForm;
   name: string;
   deepPath: string;
   handleChange?: (opt: TObject) => void;
