@@ -19,7 +19,7 @@ export default function SiteInfo() {
 
   const history = useHistory();
   const respHandler = {
-    200: (): void => {
+    "200": (): void => {
       history.goBack();
       dispatch({
         type: "delete",

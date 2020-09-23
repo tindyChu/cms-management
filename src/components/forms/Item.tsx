@@ -25,7 +25,7 @@ export default function Item() {
 
   const history = useHistory();
   const respHandler = {
-    200: (data: TObject): void => {
+    "200": (data: TObject): void => {
       if (params.id) {
         history.goBack();
       } else {

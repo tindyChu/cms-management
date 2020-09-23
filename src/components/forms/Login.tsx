@@ -8,7 +8,6 @@ import { getLangUrl, getStorage } from "../../utils/common";
 import auth from "../../utils/auth";
 import t from "../../utils/translation";
 
-import { } from "module";
 import Form from "../common/Form";
 
 export default function Login(): JSX.Element {
@@ -57,12 +56,12 @@ export default function Login(): JSX.Element {
       placeholder: "Password",
       schema: "required",
       autoFocus: isViaDialog,
-      onBlur: isViaDialog ? focusBack : () => { },
+      onBlur: isViaDialog ? focusBack : () => {},
     },
   ];
 
   const respHandler = {
-    200: (data?: any): void => {
+    "200": (data?: any): void => {
       if (data) {
         auth.saveStorage(data);
         if (isViaDialog) {
@@ -78,6 +77,9 @@ export default function Login(): JSX.Element {
           payload: dispatchType,
         });
       }
+    },
+    "401": (): void => {
+      // do not thing
     },
     else: (data?: any): void => {
       if (data) {
