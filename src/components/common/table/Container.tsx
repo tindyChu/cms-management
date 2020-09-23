@@ -8,7 +8,6 @@ import {
   ITable,
   ITableSearch,
   TOption,
-  TDispatchType,
   FDispatchTableSearchForm,
 } from "../../../interfaces";
 import validation from "../../../utils/validation";

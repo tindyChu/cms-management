@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 import { Store } from "../../Store";
-import { IForm, IFormField, TObject, IState } from "../../interfaces";
+import { IForm, IFormField, TObject, IState, TOption } from "../../interfaces";
 import Form from "../common/Form";
 import { getStorage } from "../../utils/common";
 import http from "../../utils/http";
@@ -37,7 +37,7 @@ export default function Admin() {
     }
   };
 
-  const getMgtRoleOptions = (data: Array<TObject>): Array<TObject> => {
+  const getMgtRoleOptions = (data: Array<TObject>): Array<TOption> => {
     const r = data.map((current: TObject) => {
       return {
         value: current.id,

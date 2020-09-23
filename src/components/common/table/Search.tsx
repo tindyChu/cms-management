@@ -4,7 +4,6 @@ import { Store } from "../../../Store";
 import {
   ISearchForm,
   TObject,
-  TDispatchForm,
   FDispatchTableSearchForm,
 } from "../../../interfaces";
 import t from "../../../utils/translation";

@@ -1,7 +1,7 @@
 export type TObject = { [key: string]: any };
 export type TLanguage = TObject;
 export type TDispatch = (obj: IAction) => void;
-export type TOption = { value: string; label: string };
+export type TOption = { value: string | boolean; label: string };
 export type TRespHandler = { [key: string]: (...args: any) => void };
 
 export type TDispatchCommon =
@@ -123,7 +123,7 @@ export interface IFormField {
   autoFocus?: boolean;
   disabled?: boolean;
   className?: string;
-  options?: Array<TObject>;
+  options?: Array<TOption>;
   default?: string | number;
   [key: string]: any;
 }
@@ -154,7 +154,7 @@ export interface ISelectField {
   handleChange?: (opt: TObject) => void;
   label?: string;
   className?: string;
-  options?: Array<TObject>;
+  options?: Array<TOption>;
 }
 
 export interface IFileForm {

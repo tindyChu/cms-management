@@ -37,6 +37,7 @@ export default function Select({
 
   const id = `${deepPathP}-${nameP}`;
   const options = optionsP || [];
+  const value = getSelectValue(formS.data[nameP], options);
   return (
     <div className={`${classNameP || "col-sm-12"} form-group`}>
       {labelP && <label htmlFor={id}>{t(labelP)} :</label>}
@@ -46,7 +47,7 @@ export default function Select({
         name={nameP}
         options={options}
         placeholder=" --- "
-        value={getSelectValue(formS.data[nameP], options)}
+        value={value}
         onChange={(opt) => handleChange(opt)}
       />
     </div>

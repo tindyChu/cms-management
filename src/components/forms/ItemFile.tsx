@@ -29,8 +29,8 @@ export default function ItemFile() {
       label: "Cover",
       type: "radio",
       options: [
-        { label: "Yes", value: true },
-        { label: "No", value: false },
+        { value: true, label: "Yes" },
+        { value: false, label: "No" },
       ],
     },
   ];
