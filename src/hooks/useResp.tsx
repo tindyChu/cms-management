@@ -25,6 +25,7 @@ export default function useResp(): { handleResp: TH } {
   ): void => {
     if (resp.status === 401) {
       if (typeof respHandler["401"] === "function") {
+        alertErr(resp.data.Msg);
         respHandler["401"](resp.data, ...rest);
       } else {
         alertErr(resp.data.Msg);

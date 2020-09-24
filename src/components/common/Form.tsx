@@ -211,7 +211,7 @@ export default function Form({
       path = `${accessP}`;
     }
 
-    if (fieldsP.filter((current) => current.type === "file")) {
+    if (fieldsP.filter((current) => current.type === "file").length > 0) {
       config.headers["content-type"] = "multipart/form-data";
     }
 

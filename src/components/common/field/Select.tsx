@@ -21,7 +21,7 @@ export default function Select({
 
   const nameDeepPath = `data${deepPathP ? `.${deepPathP}` : ""}.${nameP}`;
 
-  const getSelectValue = (value: any, options: Array<TObject>): TObject => {
+  const getSelectValue = (value: any): TObject => {
     return options.filter((current: TObject) => current.value === value)[0];
   };
 
@@ -37,7 +37,6 @@ export default function Select({
 
   const id = `${deepPathP}-${nameP}`;
   const options = optionsP || [];
-  const value = getSelectValue(formS.data[nameP], options);
   return (
     <div className={`${classNameP || "col-sm-12"} form-group`}>
       {labelP && <label htmlFor={id}>{t(labelP)} :</label>}
@@ -47,7 +46,7 @@ export default function Select({
         name={nameP}
         options={options}
         placeholder=" --- "
-        value={value}
+        value={getSelectValue(formS.data[nameP])}
         onChange={(opt) => handleChange(opt)}
       />
     </div>
